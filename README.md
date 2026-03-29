@@ -55,3 +55,29 @@ Backend is built with Spring Boot and exposes REST APIs for an online course sel
 ### Portfolio/CV Summary (Suggested)
 
 Designed and implemented a Spring Boot backend for an online course marketplace, including JWT authentication, role-based access support, course and lesson management, order processing, MoMo payment callback handling, and per-lesson learning progress tracking with MySQL persistence.
+
+## Frontend Description
+
+Frontend is developed as a multi-page web application for students and admins, connected directly to backend REST APIs.
+
+### Core Technologies
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Fetch API
+- LocalStorage
+- Express static server (for local frontend hosting)
+
+### Main Frontend Features
+
+- Authentication flow: register/login, token persistence, and role-based redirect (Admin/Student)
+- Course browsing: dynamic categories, course listing, and responsive landing pages
+- Cart and checkout: per-user cart handling, duplicate prevention, and MoMo payment redirect flow
+- Payment result handling: callback page processing and cart cleanup after successful payment
+- Learning experience: purchased course view, lesson player, progress tracking, and continue-learning support
+- Admin pages: operational views for managing users, courses, orders, and dashboard metrics
+
+### Portfolio/CV Summary (Suggested)
+
+Built a responsive multi-page frontend for an online course marketplace, integrating authentication, course discovery, cart and MoMo payment flows, and lesson progress tracking with backend APIs.
