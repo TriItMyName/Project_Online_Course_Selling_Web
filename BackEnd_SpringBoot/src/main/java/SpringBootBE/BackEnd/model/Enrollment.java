@@ -1,6 +1,7 @@
 package SpringBootBE.BackEnd.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +15,7 @@ import java.util.List;
 @Table(name = "enrollment")
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Enrollment {
 
     @Id
@@ -23,10 +25,12 @@ public class Enrollment {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "UserID")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CourseID")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Course course;
 
     @Column(name = "EnrollmentDate")
@@ -37,6 +41,7 @@ public class Enrollment {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CurrentLessonID")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Lesson currentLesson;
 
     @OneToMany(mappedBy = "enrollment", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

@@ -1,5 +1,6 @@
 package SpringBootBE.BackEnd.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 @Table(name = "lesson_progress")
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class LessonProgress {
 
     @Id
@@ -22,10 +24,12 @@ public class LessonProgress {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EnrollmentID")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Enrollment enrollment;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "LessonID")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Lesson lesson;
 
     @Column(name = "WatchedPercentage")
